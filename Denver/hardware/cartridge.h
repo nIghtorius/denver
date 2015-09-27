@@ -36,7 +36,7 @@ public:
 };
 
 class base_cartridge {
-private:
+protected:
 	bus *cpu_bus;
 	bus *ppu_bus;
 	cart_prg *prg;
@@ -45,6 +45,7 @@ private:
 	unsigned __int16 chrbanks;
 
 public:
+	base_cartridge::base_cartridge(){};
 	base_cartridge::base_cartridge(bus *cpu_bus, bus *ppu_bus);
 	base_cartridge::~base_cartridge();
 	void	assign_rom_data(void *prgrom, unsigned __int16 prgbanks, void *chrrom, unsigned __int16 chrbanks);
